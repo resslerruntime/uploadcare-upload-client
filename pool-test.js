@@ -8,24 +8,24 @@ const createPool = time => {
   return () => _isReady;
 };
 
-const check = createPool(5000);
+const check = createPool(2500);
 const inst = poll(check);
 
-const id = setInterval(() => console.log('         |'), 500)
+const id = setInterval(() => console.log('    |'), 500)
 
 inst
   .promise
   .then(() => {
     clearInterval(id)
-    console.log("         - — poll successfull ends")
+    console.log("    - — poll successfull ends")
   })
   .catch((error) => {
     clearInterval(id)
-    console.log(`         x — poll finish with ${error.message}`)
+    console.log(`    x — poll finish with ${error.message}`)
   })
 
 setTimeout(() => {
-  console.log('         ^ — cancel event')
+  console.log('    ^ — cancel event')
   inst.cancel()
-}, 1900)
+}, 1250)
 
