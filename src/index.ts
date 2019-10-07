@@ -8,4 +8,6 @@ export {FileUploadInterface} from './fileFrom/types'
 export {UploadClientInterface} from './UploadClient'
 export {RequestOptionsInterface, RequestInterface} from './api/request/types'
 
+export {default as poll} from './tools/poll'
+
 export default UploadClient
